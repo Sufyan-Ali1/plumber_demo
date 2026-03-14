@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { BUSINESS, TRUST_BADGES } from '@/lib/constants'
 import Button from '@/components/ui/Button'
 import { PhoneIcon, ShieldIcon, ClockIcon, CheckIcon } from '@/components/ui/Icons'
@@ -8,13 +9,15 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center pt-20"
     >
-      {/* Background Image Placeholder */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&q=80')`,
-        }}
-      >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/working.png"
+          alt="Plumber at work"
+          fill
+          priority
+          className="object-cover object-top"
+        />
         {/* Overlay */}
         <div className="hero-overlay" />
       </div>
@@ -74,29 +77,6 @@ export default function Hero() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a
-          href="#trust"
-          className="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center"
-          aria-label="Scroll down"
-        >
-          <svg
-            className="w-5 h-5 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </a>
       </div>
     </section>
   )

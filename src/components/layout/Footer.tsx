@@ -112,25 +112,9 @@ export default function Footer() {
       {/* Copyright Bar */}
       <div className="border-t border-white/10">
         <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              &copy; {currentYear} {BUSINESS.name}. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Terms of Service
-              </a>
-            </div>
-          </div>
+          <p className="text-gray-400 text-sm text-center">
+            &copy; {currentYear} {BUSINESS.name}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

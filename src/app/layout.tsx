@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { BUSINESS } from '@/lib/constants'
 import { Navbar, Footer } from '@/components/layout'
+import { FloatingCall, BackToTop } from '@/components/ui'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
   title: `${BUSINESS.name} | 24/7 Emergency Plumber in Sydney`,
   description: `${BUSINESS.name} - Your trusted local plumber in Sydney. 24/7 emergency plumbing services, drain cleaning, leak detection, hot water repairs & more. Licensed & insured. Call ${BUSINESS.phone}`,
   keywords: 'plumber sydney, emergency plumber, 24/7 plumber, drain cleaning sydney, leak detection, hot water repair, bathroom plumbing, licensed plumber',
+  icons: {
+    icon: '/favicon.svg',
+  },
   openGraph: {
     title: `${BUSINESS.name} | 24/7 Emergency Plumber in Sydney`,
     description: `Your trusted local plumber in Sydney. 24/7 emergency services, licensed & insured professionals. Call ${BUSINESS.phone}`,
@@ -84,17 +88,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} overflow-x-hidden w-full`}>
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingCall />
+        <BackToTop />
       </body>
     </html>
   )
