@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ABOUT_CONTENT, BUSINESS } from '@/lib/constants'
 import SectionHeading from '@/components/ui/SectionHeading'
 import { CheckIcon } from '@/components/ui/Icons'
@@ -10,15 +11,16 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Placeholder */}
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-200">
-              <img
-                src="https://images.unsplash.com/photo-1581092162384-8987c1d64926?w=800&q=80"
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-200 relative">
+              <Image
+                src="/images/team.png"
                 alt="Professional plumbing team"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover object-top"
               />
             </div>
             {/* Experience Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-accent-500 text-white p-6 rounded-xl shadow-xl hidden md:block">
+            <div className="absolute -bottom-6 right-0 bg-accent-500 text-white p-6 rounded-xl shadow-xl hidden md:block">
               <p className="text-4xl font-bold">{BUSINESS.yearsExperience}+</p>
               <p className="text-sm">Years Experience</p>
             </div>
